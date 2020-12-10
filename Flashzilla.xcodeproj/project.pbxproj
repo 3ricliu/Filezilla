@@ -11,6 +11,8 @@
 		071C7862257F3FF500876F60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C7861257F3FF500876F60 /* ContentView.swift */; };
 		071C7864257F3FF700876F60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071C7863257F3FF700876F60 /* Assets.xcassets */; };
 		071C7867257F3FF700876F60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071C7866257F3FF700876F60 /* Preview Assets.xcassets */; };
+		071C787025816A2800876F60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C786F25816A2800876F60 /* Card.swift */; };
+		071C787325816BC800876F60 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C787225816BC800876F60 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		071C7863257F3FF700876F60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		071C7866257F3FF700876F60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		071C7868257F3FF700876F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		071C786F25816A2800876F60 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		071C787225816BC800876F60 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 		071C7853257F3FF500876F60 = {
 			isa = PBXGroup;
 			children = (
+				071C787225816BC800876F60 /* CardView.swift */,
 				071C785E257F3FF500876F60 /* Flashzilla */,
 				071C785D257F3FF500876F60 /* Products */,
 			);
@@ -54,6 +59,7 @@
 			children = (
 				071C785F257F3FF500876F60 /* FlashzillaApp.swift */,
 				071C7861257F3FF500876F60 /* ContentView.swift */,
+				071C786F25816A2800876F60 /* Card.swift */,
 				071C7863257F3FF700876F60 /* Assets.xcassets */,
 				071C7868257F3FF700876F60 /* Info.plist */,
 				071C7865257F3FF700876F60 /* Preview Content */,
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				071C7862257F3FF500876F60 /* ContentView.swift in Sources */,
+				071C787025816A2800876F60 /* Card.swift in Sources */,
+				071C787325816BC800876F60 /* CardView.swift in Sources */,
 				071C7860257F3FF500876F60 /* FlashzillaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
