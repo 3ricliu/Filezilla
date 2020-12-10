@@ -21,14 +21,14 @@ struct CardView: View {
                 .shadow(radius: 10)
             
             VStack {
-                Text(card.prompt)
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-
                 if isShowingAnswer {
                     Text(card.answer)
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(.blue)
+                } else {
+                    Text(card.prompt)
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
                 }
             }
             .padding(20)
