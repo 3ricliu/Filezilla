@@ -21,16 +21,17 @@ struct EditCard: View {
                     TextField("Answer", text: $newAnswer)
                     Button("Add card", action: addCard)
                 }
-            }
             
-            Section {
-                ForEach(0..<cards.count, id: \.self) { index in
-                    VStack(alignment: .leading) {
-                        Text(self.cards[index].prompt)
-                            .font(.headline)
-                        Text(self.cards[index].answer)
-                            .foregroundColor(.secondary)
+                Section {
+                    ForEach(0..<cards.count, id: \.self) { index in
+                        VStack(alignment: .leading) {
+                            Text(self.cards[index].prompt)
+                                .font(.headline)
+                            Text(self.cards[index].answer)
+                                .foregroundColor(.secondary)
+                        }
                     }
+                    .onDelete(perform: removeCards)
                 }
             }
             .navigationBarTitle("Edit Cards")
