@@ -20,9 +20,12 @@ struct ContentView: View {
     @Environment(\.accessibilityEnabled) var accessibilityEnabled
     @State private var cards = [Card]()
     
+    @State private var feedback = UINotificationFeedbackGenerator()
+    
     @State private var isActive = true
     @State private var timeRemaining = 100
     @State private var showingEditScreen = false
+    @State private var showingTimeUpAlert = false
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -126,9 +129,12 @@ struct ContentView: View {
             }
         }
         .onReceive(timer) { timer in
-            guard self.isActive else { return }
+            guard self.isActive && self.showingTimeUpAlert == false else { return }
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
+            } else {
+                self.feedback.notificationOccurred(.error)
+                self.showingTimeUpAlert.toggle()
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
@@ -143,6 +149,9 @@ struct ContentView: View {
             EditCard()
         }
         .onAppear(perform: resetCards)
+        .alert(isPresented: $showingTimeUpAlert) {
+            Alert(title: Text("Times Up!"), message: Text("Better Luck Next Time!"), dismissButton: Alert.Button.default(Text("OK"), action: { resetCards() }))
+        }
     }
     
     func removeCard(at index: Int) {
